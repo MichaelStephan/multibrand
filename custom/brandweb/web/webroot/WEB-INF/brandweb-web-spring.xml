@@ -17,7 +17,6 @@
            http://www.springframework.org/schema/aop
            http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-
 	<import resource="spring-security-config.xml" />
 
 	<!-- Spring managed FilterChain for hybris Filter stack -->

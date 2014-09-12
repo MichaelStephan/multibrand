@@ -32,7 +32,9 @@
 		<property name="targetClassName" value="de.bsh.jalo.BshmultibrandwebcommonJaloSession"/>
 	</bean>-->
 
-	<!-- Spring managed FilterChain for hybris Filter stack -->
+    <import resource="spring-security-config.xml" />
+
+    <!-- Spring managed FilterChain for hybris Filter stack -->
 	<bean id="bshmultibrandwebcommonPlatformFilterChain" class="de.hybris.platform.servicelayer.web.PlatformFilterChain">
 		<constructor-arg>
 			<list>

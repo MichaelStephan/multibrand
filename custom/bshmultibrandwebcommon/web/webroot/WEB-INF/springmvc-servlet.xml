@@ -29,10 +29,10 @@
     <context:component-scan base-package="de.bsh.controller"/>
 
     <bean id="viewResolver"
-          class="de.bsh.spring.MultiBrandInternalResourceViewResolver">
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass"
                   value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="prefix" value="/WEB-INF/multibrand/"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 

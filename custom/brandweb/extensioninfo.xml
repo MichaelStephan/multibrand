@@ -11,20 +11,19 @@
  license agreement you entered into with hybris.
 
   
---><extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+-->
+<extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
 
-   <extension abstractclassprefix="Generated" classprefix="Brandweb" managername="BrandwebManager" managersuperclass="de.hybris.platform.jalo.extension.Extension" name="brandweb">
-               
-      <!-- you should add all required extensions to this list, except platform extensions which are automatically required -->         
-      <!-- <requires-extension name="cms"/> -->         
-      
+    <extension abstractclassprefix="Generated" classprefix="Brandweb" managername="BrandwebManager"
+               managersuperclass="de.hybris.platform.jalo.extension.Extension" name="brandweb">
 
-      <coremodule generated="true" manager="de.bsh.jalo.BrandwebManager" packageroot="de.bsh"/>
+        <!-- you should add all required extensions to this list, except platform extensions which are automatically required -->
+        <requires-extension name="bshmultibrandwebcommon"/>
 
-      <webmodule jspcompile="false" webroot="/brandweb"/>
-					
-	
+        <coremodule generated="true" manager="de.bsh.jalo.BrandwebManager" packageroot="de.bsh"/>
 
-   </extension>
-      
+        <webmodule jspcompile="false" webroot="/brandweb"/>
+
+    </extension>
+
 </extensioninfo>

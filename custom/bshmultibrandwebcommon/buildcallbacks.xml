@@ -81,19 +81,11 @@
  	  	  	 <exclude name="**/bin/**" />
  	  	 </patternset>
  
---><project name="bshmultibrandwebcommon_buildcallbacks">
+-->
 
-	<!-- 
-	    Called whenever 'ant ear' is used. this callback can be used to modify the content of the ear file
-	
-	     ${ear.path}: 			path to ear
-	 -->
-	<macrodef name="bshmultibrandwebcommon_before_ear">
-		<sequential>
+<project name="bshmultibrandwebcommon_buildcallbacks">
 
-			<!-- you can do anything before the EAR file is being packed -->
 
-		</sequential>
-	</macrodef>
+
 
 </project>
