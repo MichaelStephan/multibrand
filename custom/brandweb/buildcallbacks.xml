@@ -82,25 +82,32 @@
 -->
 
 <project name="brandweb_buildcallbacks">
+    <macrodef name="brandweb_after_clean">
+        <sequential>
+            <delete dir="${ext.brandweb.path}/web/webroot"/>
+        </sequential>
+    </macrodef>
+
     <macrodef name="brandweb_before_compile_web">
         <sequential>
-            <mkdir dir="${ext.brandweb.path}/web/webroot/WEB-INF/multibrand/custom"/>
-            <mkdir dir="${ext.brandweb.path}/web/webroot/WEB-INF/multibrand/custom/js"/>
-            <mkdir dir="${ext.brandweb.path}/web/webroot/WEB-INF/multibrand/custom/jsp"/>
-            <mkdir dir="${ext.brandweb.path}/web/webroot/WEB-INF/multibrand/custom/css"/>
-            <delete dir="${ext.brandweb.path}/web/webroot/WEB-INF/multibrand/common"/>
-            <copy todir="${ext.brandweb.path}/web/webroot/WEB-INF/multibrand/common/jsp/" includeEmptyDirs="true"
+            <delete dir="${ext.brandweb.path}/web/webroot"/>
+            <mkdir dir="${ext.brandweb.path}/web/webroot"/>
+            <copy verbose="true" todir="${ext.brandweb.path}/web/webroot" includeEmptyDirs="true"
                   overwrite="true">
-                <fileset dir="${ext.bshmultibrandwebcommon.path}/web/webroot/WEB-INF/jsp"/>
-            </copy>
-            <copy todir="${ext.brandweb.path}/web/webroot/WEB-INF/multibrand/common/js/" includeEmptyDirs="true"
+                <fileset dir="${ext.bshmultibrandwebcommon.path}/web/webroot">
+                    <exclude name="**/web.xml"/>
+                    <exclude name="**/springmvc-servlet.xml"/>
+                    <exclude name="**/spring-security-config.xml"/>
+                    <exclude name="**/ibm-web-ext.xmi"/>
+                    <exclude name="**/bshmultibrandwebcommon-web-spring.xml"/>
+                    <exclude name="**/classes/**"/>
+                </fileset>
+             </copy>
+            <copy verbose="true" todir="${ext.brandweb.path}/web/webroot" includeEmptyDirs="true"
                   overwrite="true">
-                <fileset dir="${ext.bshmultibrandwebcommon.path}/web/webroot/WEB-INF/js"/>
+                <fileset dir="${ext.brandweb.path}/web/custom/webroot"/>
             </copy>
-            <copy todir="${ext.brandweb.path}/web/webroot/WEB-INF/multibrand/common/css/" includeEmptyDirs="true"
-                  overwrite="true">
-                <fileset dir="${ext.bshmultibrandwebcommon.path}/web/webroot/WEB-INF/css"/>
-            </copy>
+
             <jar basedir="${ext.bshmultibrandwebcommon.path}/web/webroot/WEB-INF/classes"
                  destfile="${ext.brandweb.path}/web/webroot/WEB-INF/lib/bshmultibrandwebcommon.jar"/>
         </sequential>
